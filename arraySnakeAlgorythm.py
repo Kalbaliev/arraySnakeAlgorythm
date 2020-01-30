@@ -1,15 +1,30 @@
-test_array = [
-    [1, 2, 3, 48, 96],
-    [4, 5, 6, 101, 201],
-    [7, 8, 9, 555, 952],
-    [10, 11, 12, 1599, 2788],
+import random
 
 
-]
+class SnakeAlgortyhm:
 
-result = []
+    def __init__(self):
+        self.generateRandomMatrix()
+        result = []
 
-for i in range(0, len(test_array), 2):
-    result += test_array[i]+test_array[i+1][::-1]
+        for i in range(0, len(self.random_array), 2):
+            result += self.random_array[i]+self.random_array[i+1][::-1]
 
-print(result)
+        print(result)
+        print(
+            "\n\n********************* THANKS A LOT !**************************\n\n")
+
+    def generateRandomMatrix(self):
+        n = random.randint(1, 10)
+        m = random.randint(1, 10)
+
+        self.random_array = [[random.randint(1, 100)
+                              for i in range(m)] for j in range(n)]
+
+        print("\n\n*************** GENERATED RANDOM ARRAY **********************\n\n")
+        for i in range(len(self.random_array)):
+            print(self.random_array[i])
+        print("\n\n********************* RESULT ARRAY *************************\n\n")
+
+
+obj = SnakeAlgortyhm()
